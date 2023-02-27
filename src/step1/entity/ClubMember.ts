@@ -56,4 +56,4 @@ class ClubMember {
     }
 }
 
-export default ClubMember
+export default ClubMember;
