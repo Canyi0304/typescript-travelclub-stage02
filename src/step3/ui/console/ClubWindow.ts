@@ -29,7 +29,7 @@ class ClubWindow{
                 continue;
             }
 
-            const intro = question('\n> club (0.Club Menu): ');
+            const intro = question('\n> intro (0.Club Menu): ');
             
             if(intro === '0'){
                 break;
@@ -182,9 +182,10 @@ class ClubWindow{
 
         const confirmStr = question('Remove this club? (Y: yes, N: no): ');
 
-        if (confirmStr.toLowerCase() === 'y' || confirmStr.toLowerCase() === 'yes') {
+        if (confirmStr.toLowerCase() === 'Y' || confirmStr.toLowerCase() === 'yes') {
             
             console.log('\n> Removing a club --> ' + targetClub.name);
+            this.clubCoordinator.remove(targetClub);
         }
         else{
             console.log('\n> Remove cancelled. your club is safe. --> '+ targetClub.name);
