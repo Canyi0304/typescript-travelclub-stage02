@@ -33,6 +33,29 @@ class ClubCoordinator {
 
         return this.clubStore.retrieve(name);
     }
+
+    modify(name: string, newIntro: string) : void {
+
+        if (!this.clubStore.exist(name)) {
+            return;
+        }
+
+        const club = this.clubStore.retrieve(name);
+
+        club.setName(name);
+        club.setIntro(newIntro);
+
+        this.clubStore.update(club);
+    }
+
+    remove(name: string): void {
+
+        if (!this.clubStore.exist(name)) {
+            return;
+        }
+
+        this.clubStore.delete(name);
+    }
 }
 
 export default ClubCoordinator;
